@@ -142,19 +142,19 @@ def main():
      [ 0.36821154 -0.174365  ]
      [ 0.29259713  0.36315461]]
     '''
-    #try out to transform a data 1x13 to new 2 feature space throuth w
+    #try out to transform a data 1x13 to new 1x2 feature space throuth w
     print(X_train_std[0])
     print(X_train_std[0].dot(w))
 
 
-    # we transform all origianl 123x13 data through this w
+    # we transform all origianl 123x13 data to 123x2 through this w
     X_train_pca = X_train_std.dot(w)
 
     #plot out the data after transformed
     #you can found the data along the PC1 is more separate(see the data variance in X axis) then PC2 (Y).
     #it is what we say before , that th PC1 has 40% variance.
     colors = ['r', 'b', 'g']
-    markers = ['s', 'x', 'o']
+    markers = ['s', 'x', 'o'] # three kinds of wine, but it just for showing, PCA is unsupervised method.
     #x is the transformed data
 
     for l, c, m in zip(np.unique(y_train), colors, markers):
