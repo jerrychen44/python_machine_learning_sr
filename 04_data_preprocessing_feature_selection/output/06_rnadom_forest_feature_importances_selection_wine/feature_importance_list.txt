@@ -1,0 +1,13 @@
+ 1) Alcohol                        0.182508
+ 2) Malic acid                     0.158574
+ 3) Ash                            0.150954
+ 4) Alcalinity of ash              0.131983
+ 5) Magnesium                      0.106564
+ 6) Total phenols                  0.078249
+ 7) Flavanoids                     0.060717
+ 8) Nonflavanoid phenols           0.032039
+ 9) Proanthocyanins                0.025385
+10) Color intensity                0.022369
+11) Hue                            0.022070
+12) OD280/OD315 of diluted wines   0.014655
+13) Proline 

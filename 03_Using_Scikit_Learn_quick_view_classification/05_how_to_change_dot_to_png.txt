@@ -1,0 +1,12 @@
+1.
+http://www.graphviz.org/Download_macos.php
+
+download
+mountainlion	graphviz-2.36.0.pkg
+
+2.install it
+
+
+3.go the the folder with tree.dot
+
+$ dot -Tpng tree.dot -o tree.png
