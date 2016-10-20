@@ -4,6 +4,7 @@ from itertools import combinations
 import numpy as np
 from sklearn.cross_validation import train_test_split
 from sklearn.metrics import accuracy_score
+import os
 #######################
 # Hand made "sequential feature selection" (sklearn doesn't have it)
 # using SBS algo.
@@ -66,9 +67,19 @@ class SBS():
 # use SBS in Knn for example
 # (wine)
 #############################
+
+
+
 def read_data():
 
-    df_wine = pd.read_csv('https://archive.ics.uci.edu/ml/machine-learning-databases/wine/wine.data', header=None)
+    #df_wine = pd.read_csv('https://archive.ics.uci.edu/ml/machine-learning-databases/wine/wine.data', header=None)
+
+    #read from csv
+    filepath=os.path.dirname(os.path.realpath(__file__))#root, where the apk_integration_test.py file is.
+    source_folder='source'
+    data_csv_path=filepath+'/'+source_folder+'/wine.csv'
+    df_wine = pd.read_csv(data_csv_path, header=None)
+
 
     #save csv
     '''
