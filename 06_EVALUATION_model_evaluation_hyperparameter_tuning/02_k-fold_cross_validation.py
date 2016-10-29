@@ -60,8 +60,6 @@ def main():
 
     print("Data ready")
 
-
-
     ###################
     # use pipeline
     ###################
