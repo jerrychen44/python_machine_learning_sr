@@ -251,6 +251,14 @@ def main():
     print('CV Accuracy: %.3f' % gs_lr_tfidf.best_score_)
     clf = gs_lr_tfidf.best_estimator_
     print('Test Accuracy: %.3f' % clf.score(X_test, y_test))
-
+    '''
+    #take 27 minutes
+    [Parallel(n_jobs=-1)]: Done  42 tasks      | elapsed:  3.0min
+    [Parallel(n_jobs=-1)]: Done 192 tasks      | elapsed: 17.1min
+    [Parallel(n_jobs=-1)]: Done 240 out of 240 | elapsed: 22.9min finished
+    Best parameter set: {'clf__C': 10.0, 'vect__ngram_range': (1, 1), 'clf__penalty': 'l2', 'vect__tokenizer': <function tokenizer at 0x7f94eb1dc6a8>, 'vect__stop_words': None}
+    CV Accuracy: 0.897
+    Test Accuracy: 0.898
+    '''
     return 0
 main()
