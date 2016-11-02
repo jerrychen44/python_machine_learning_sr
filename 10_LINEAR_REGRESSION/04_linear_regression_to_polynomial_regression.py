@@ -238,7 +238,7 @@ def modeling_polynomial_house(df):
     plt.ylabel('Price in $1000\'s [MEDV]')
     plt.legend(loc='upper right')
 
-    plt.tight_layout()
+    #plt.tight_layout()
     # plt.savefig('./figures/polyhouse_example.png', dpi=300)
     plt.show()
 
@@ -255,19 +255,22 @@ def plot_the_correlation_scatter(df):
     #plt.tight_layout()
     # plt.savefig('./figures/scatter.png', dpi=300)
     plt.show()
+    sns.reset_orig()
     return 0
 def transforming_non_linear_dataset_tofix_linear(df):
 
     #before transforming, take a look.
-    plot_the_correlation_scatter(df)
+    #plot_the_correlation_scatter(df)
 
     X = df[['LSTAT']].values
     y = df['MEDV'].values
-
+    print(X,type(X))
+    print(y,type(y))
     # transform features
     X_log = np.log(X)
+    #X_log=X
     y_sqrt = np.sqrt(y)
-
+    #y_sqrt=y
     # fit features
     X_fit = np.arange(X_log.min()-1, X_log.max()+1, 1)[:, np.newaxis]
 
@@ -288,10 +291,43 @@ def transforming_non_linear_dataset_tofix_linear(df):
     plt.ylabel('$\sqrt{Price \; in \; \$1000\'s [MEDV]}$')
     plt.legend(loc='lower left')
 
-    plt.tight_layout()
+    #plt.tight_layout()
     # plt.savefig('./figures/transform_example.png', dpi=300)
     plt.show()
     ''' R=0.69 '''
+
+    return 0
+
+
+def example_x_log_and_y_sqrt():
+
+    ################
+    # exponential to log
+    ###############
+    X = np.linspace(-1, 2, 50)# for axis
+    y = np.exp(-X)# first fake data with exponential
+    plt.scatter(X, y, label='original X with exponential', color='green')
+
+    y_log=np.log(y)# change exponential data to log
+    #print(X,type(X))
+    plt.scatter(X, y_log, label='log(X)', color='blue')
+    plt.show()
+
+    ################
+    # exponential to sqrt
+    ###############
+    X = np.linspace(-1, 2, 50)# for axis
+    y = np.exp(-X)# first fake data with exponential
+    plt.scatter(X, y, label='original X with exponential', color='green')
+
+    y_sqrt=np.sqrt(y)# change exponential data to log
+    #print(X,type(X))
+    plt.scatter(X, y_sqrt, label='sqrt(X)', color='blue')
+    plt.show()
+
+
+
+
 
     return 0
 
@@ -317,18 +353,6 @@ def main():
     # reset back to the original setting for matplotlib
 
 
-
-    ################################
-    # Evaluating the performance of linear regression models
-    ###############################
-
-    '''
-    X = df.iloc[:, :-1].values# use all features
-    y = df['MEDV'].values
-
-    X_train, X_test, y_train, y_test = train_test_split(
-        X, y, test_size=0.3, random_state=0)
-    '''
     print("data ready..")
 
 
@@ -347,6 +371,8 @@ def main():
     print("you can transfore X,y to other space to still use linear to fit and also good.")
     transforming_non_linear_dataset_tofix_linear(df)
 
+
+    example_x_log_and_y_sqrt()
 
     return 0
 
