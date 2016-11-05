@@ -209,11 +209,11 @@ def main():
     y_train_pred = nn.predict(X_train)
     acc = np.sum(y_train == y_train_pred, axis=0) / X_train.shape[0]
     print('Training accuracy: %.2f%%' % (acc * 100))
-
+    ''' Training accuracy: 97.84%'''
     y_test_pred = nn.predict(X_test)
     acc = np.sum(y_test == y_test_pred, axis=0) / X_test.shape[0]
     print('Testing accuracy: %.2f%%' % (acc * 100))
-
+    ''' Testing accuracy: 96.02% '''
 
     #################
     # plot out the misclassify number
@@ -258,16 +258,16 @@ def main():
     # we do the small sample to quick test
     nn_check.fit(X_train[:5], y_train[:5], print_progress=False)
     '''
-    Ok: 2.56712936241e-10
+    Ok: 2.55086356647e-10
     Ok: 2.94603251069e-10
-    Ok: 2.37615620231e-10
-    Ok: 2.43469423226e-10
+    Ok: 2.40855267881e-10
+    Ok: 2.42754645924e-10
     Ok: 3.37872073158e-10
-    Ok: 3.63466384861e-10
+    Ok: 3.6208032406e-10
     Ok: 2.22472120785e-10
     Ok: 2.33163708438e-10
-    Ok: 3.44653686551e-10
-    Ok: 2.17161707211e-10
+    Ok: 3.3322429862e-10
+    Ok: 2.13281781508e-10
     '''
 
     return 0
